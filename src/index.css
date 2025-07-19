@@ -28,6 +28,7 @@ header h1 {
 }
 
 header p {
+    margin: auto;
     max-width: 350px;
     font-size: 0.875rem;
     color: #8E8E8E;
@@ -71,6 +72,7 @@ header p {
 /* Languages Component */
 
 .languages-container {
+    margin: auto;
     max-width: 350px;
     display: flex;
     flex-wrap: wrap;

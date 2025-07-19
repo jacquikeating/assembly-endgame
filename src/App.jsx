@@ -26,14 +26,14 @@ function App() {
     }
 
   return (
-    <>
+    <main>
       <Header />
       <Status isGameWon={isGameWon} isGameLost={isGameLost} />
       <Languages wrongGuessCount={wrongGuessCount} />
       <Word currentWord={currentWord} guessedLetters={guessedLetters} />
       <Keyboard guessedLetters={guessedLetters} currentWord={currentWord} guess={guess} />
       { isGameOver && <NewGameBtn /> }
-    </>
+    </main>
   )
 }
 
