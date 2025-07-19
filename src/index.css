@@ -55,3 +55,20 @@ header p {
 .status p {
     margin: 0.3125rem; /* 5px */
 }
+
+
+
+/* Languages Component */
+
+.languages-container {
+    max-width: 350px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.28125rem; /* 4.5px */
+}
+
+.language-chip {
+    border-radius: 3px;
+    padding: 0.28125rem; /* 4.5px */
+}
