@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Header from './components/Header'
 import Status from './components/Status'
+import Languages from './components/Languages'
 
 function App() {
 
@@ -8,6 +9,7 @@ function App() {
     <>
       <Header />
       <Status />
+      <Languages />
     </>
   )
 }
