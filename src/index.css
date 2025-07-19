@@ -37,14 +37,6 @@ header p {
 
 /* Status Component */
 
-/* section.game-status {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-} */
-
-/* */
 .status {
     width: 100%;
     margin-block: 1.875rem; /* 30px */
