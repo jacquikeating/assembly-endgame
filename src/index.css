@@ -13,6 +13,10 @@ body {
     justify-content: center;
 }
 
+
+
+/* Header Component */
+
 header {
     text-align: center;
 }
@@ -27,4 +31,35 @@ header p {
     max-width: 350px;
     font-size: 0.875rem;
     color: #8E8E8E;
+}
+
+
+
+/* Status Component */
+
+/* section.game-status {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+} */
+
+/* */
+.status {
+    width: 100%;
+    margin-block: 1.875rem; /* 30px */
+    padding: 0.375rem; /* 6px */
+    border-radius: 4px;
+    background: #10A95B;
+    text-align: center;
+    color: #F9F4DA;
+}
+
+.status h2 {
+    margin: 0.3125rem; /* 5px */
+    font-size: 1.25rem;
+}
+
+.status p {
+    margin: 0.3125rem; /* 5px */
 }
