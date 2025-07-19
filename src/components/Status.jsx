@@ -1,3 +1,5 @@
+import { clsx } from 'clsx';
+
 export default function Status({ isGameWon, isGameLost }) {
 
     function messageContent() {
@@ -18,9 +20,13 @@ export default function Status({ isGameWon, isGameLost }) {
         }
     }
 
-    
+    const gameStatusClass = clsx("status", {
+        won: isGameWon,
+        lost: isGameLost
+    })
+
     return (
-        <section className="status">
+        <section className={gameStatusClass}>
             {messageContent()}
         </section>
     )
