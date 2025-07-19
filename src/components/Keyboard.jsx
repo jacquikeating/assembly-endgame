@@ -8,18 +8,15 @@ export default function Keyboard({ guessedLetters, currentWord, guess}) {
     return (
         <section className="keyboard">
             {alphabet.map((letter, index) => {
-                const isGuessed = guessedLetters.includes(letter)
-                const isCorrect = isGuessed && currentWord.includes(letter)
-                const isIncorrect = isGuessed && !currentWord.includes(letter)
-                const className = clsx({
-                    correct: isCorrect,
-                    incorrect: isIncorrect
+                const clsxClass = clsx({
+                    correct: guessedLetters.includes(letter) && currentWord.includes(letter),
+                    incorrect: guessedLetters.includes(letter) && !currentWord.includes(letter)
                 })
 
                 return (
                     <button 
                         key={index}
-                        className={className}
+                        className={clsxClass}
                         onClick={() => guess(letter)}
                         >
                             {letter.toUpperCase()}
