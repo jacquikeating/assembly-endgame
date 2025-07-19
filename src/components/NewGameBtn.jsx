@@ -1,5 +1,5 @@
 export default function NewGameBtn() {
     return (
-        <button>New Game</button>
+        <button id="new-game">New Game</button>
     )
 }
