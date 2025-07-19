@@ -8,6 +8,14 @@ import NewGameBtn from './components/NewGameBtn'
 
 function App() {
     const [currentWord, setCurrentWord] = useState("react")
+    const [guessedLetters, setGuessedLetters] = useState([])
+
+
+    function guess(letter) {
+      if (!guessedLetters.includes(letter)) {
+        setGuessedLetters(prevGuesses => [...prevGuesses, letter])
+      }
+    }
 
   return (
     <>
@@ -15,7 +23,7 @@ function App() {
       <Status />
       <Languages />
       <Word currentWord={currentWord} />
-      <Keyboard />
+      <Keyboard guessedLetters={guessedLetters} guess={guess} />
       <NewGameBtn />
     </>
   )

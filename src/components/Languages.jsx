@@ -1,5 +1,4 @@
 import { languages } from "../languages.js"
-console.log(languages)
 
 export default function Languages() {
     return (
