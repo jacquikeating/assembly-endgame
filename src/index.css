@@ -122,9 +122,18 @@ header p {
     transition: all 0.2s;
 }
 
+.keyboard button.correct {
+    background: #10A95B;
+}
+
+.keyboard button.incorrect {
+    background: #EC5D49;
+}
+
 .keyboard > button:hover {
     opacity: 1.0;
 }
+
 
 
 

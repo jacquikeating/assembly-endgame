@@ -23,7 +23,7 @@ function App() {
       <Status />
       <Languages />
       <Word currentWord={currentWord} />
-      <Keyboard guessedLetters={guessedLetters} guess={guess} />
+      <Keyboard guessedLetters={guessedLetters} currentWord={currentWord} guess={guess} />
       <NewGameBtn />
     </>
   )
