@@ -18,8 +18,6 @@ function App() {
     const isGameLost = wrongGuessCount >= languages.length - 1 
     const isGameOver = isGameWon || isGameLost
 
-    console.log(isGameOver)
-
     // Functions
     function guess(letter) {
       if (!guessedLetters.includes(letter)) {
@@ -30,7 +28,7 @@ function App() {
   return (
     <>
       <Header />
-      <Status />
+      <Status isGameWon={isGameWon} isGameLost={isGameLost} />
       <Languages wrongGuessCount={wrongGuessCount} />
       <Word currentWord={currentWord} guessedLetters={guessedLetters} />
       <Keyboard guessedLetters={guessedLetters} currentWord={currentWord} guess={guess} />
