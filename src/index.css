@@ -29,7 +29,7 @@ header h1 {
 
 header p {
     margin: auto;
-    max-width: 350px;
+    max-width: 21.875rem; /* 350px */
     font-size: 0.875rem;
     color: #8E8E8E;
 }
@@ -40,7 +40,8 @@ header p {
 
 .status {
     width: 100%;
-    min-height: 70px;
+    max-width: 21.875rem; /* 350px */
+    min-height: 4.375rem; /* 70px */
     margin-block: 1.875rem; /* 30px */
     border-radius: 4px;
     text-align: center;
@@ -73,7 +74,7 @@ header p {
 
 .languages-container {
     margin: auto;
-    max-width: 350px;
+    max-width: 21.875rem; /* 350px */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
