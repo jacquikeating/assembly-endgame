@@ -1,12 +1,12 @@
 import { languages } from "../languages.js"
 
-export default function Languages() {
+export default function Languages({ wrongGuessCount }) {
     return (
         <section className="languages-container">
             {languages.map((lang, index) => {
                     return (
                         <span
-                            className="language-chip" 
+                            className={index < wrongGuessCount ? "chip lost" : "chip"} 
                             style={{backgroundColor: lang.backgroundColor, color: lang.color}}
                             key={index}
                         >

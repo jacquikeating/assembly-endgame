@@ -68,9 +68,25 @@ header p {
     gap: 0.28125rem; /* 4.5px */
 }
 
-.language-chip {
+.chip {
     border-radius: 3px;
     padding: 0.28125rem; /* 4.5px */
+    position: relative;
+}
+
+.chip.lost::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 3px;
+    background-color: rgba(0, 0, 0, 0.7);
+    content: "💀";
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
