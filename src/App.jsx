@@ -7,10 +7,14 @@ import Keyboard from './components/Keyboard'
 import NewGameBtn from './components/NewGameBtn'
 
 function App() {
+    // State values
     const [currentWord, setCurrentWord] = useState("react")
     const [guessedLetters, setGuessedLetters] = useState([])
 
+    // Derived values
+    let wrongGuessCount = guessedLetters.filter((letter) => !currentWord.includes(letter)).length
 
+    // Functions
     function guess(letter) {
       if (!guessedLetters.includes(letter)) {
         setGuessedLetters(prevGuesses => [...prevGuesses, letter])
