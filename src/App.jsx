@@ -4,6 +4,7 @@ import Status from './components/Status'
 import Languages from './components/Languages'
 import Word from './components/Word'
 import Keyboard from './components/Keyboard'
+import NewGameBtn from './components/NewGameBtn'
 
 function App() {
     const [currentWord, setCurrentWord] = useState("react")
@@ -15,6 +16,7 @@ function App() {
       <Languages />
       <Word currentWord={currentWord} />
       <Keyboard />
+      <NewGameBtn />
     </>
   )
 }
