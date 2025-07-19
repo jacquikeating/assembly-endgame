@@ -76,6 +76,7 @@ header p {
 
 
 /* Word Component */
+
 .word-container {
     display: flex;
     justify-content: center;
@@ -93,4 +94,34 @@ header p {
     justify-content: center;
     font-weight: 700;
     font-size: 1.125rem; /* 18px */
+}
+
+
+
+/* Keyboard Component */
+
+.keyboard {
+    width: 100%;
+    margin-block: 2.25rem; /* 36px */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.375rem; /* 6px */
+}
+
+.keyboard button {
+    width: 2.5rem; /* 40px */
+    height: 2.5rem; /* 40px */
+    border: 1px solid #D7D7D7;
+    border-radius: 4px;
+    background: #FCBA29;
+    font-weight: 600;
+    color: #1E1E1E;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.keyboard > button:hover {
+    opacity: 1.0;
 }
