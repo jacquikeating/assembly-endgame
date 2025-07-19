@@ -72,3 +72,25 @@ header p {
     border-radius: 3px;
     padding: 0.28125rem; /* 4.5px */
 }
+
+
+
+/* Word Component */
+.word-container {
+    display: flex;
+    justify-content: center;
+    gap: 0.125rem; /* 2px */
+    margin-block: 2.25rem; /* 36px */
+}
+
+.word-container span {
+    width: 2.5rem; /* 40px */
+    height: 2.5rem; /* 40px */
+    border-bottom: 1px solid #F9F4DA;
+    background: #323232;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.125rem; /* 18px */
+}
