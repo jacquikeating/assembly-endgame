@@ -5,6 +5,7 @@ import Languages from './components/Languages'
 import Word from './components/Word'
 import Keyboard from './components/Keyboard'
 import NewGameBtn from './components/NewGameBtn'
+import { languages } from "./languages.js"
 
 function App() {
     // State values
@@ -13,6 +14,11 @@ function App() {
 
     // Derived values
     let wrongGuessCount = guessedLetters.filter((letter) => !currentWord.includes(letter)).length
+    const isGameWon = currentWord.split("").every(letter => guessedLetters.includes(letter))
+    const isGameLost = wrongGuessCount >= languages.length - 1 
+    const isGameOver = isGameWon || isGameLost
+
+    console.log(isGameOver)
 
     // Functions
     function guess(letter) {
@@ -28,7 +34,7 @@ function App() {
       <Languages wrongGuessCount={wrongGuessCount} />
       <Word currentWord={currentWord} guessedLetters={guessedLetters} />
       <Keyboard guessedLetters={guessedLetters} currentWord={currentWord} guess={guess} />
-      <NewGameBtn />
+      { isGameOver && <NewGameBtn /> }
     </>
   )
 }
