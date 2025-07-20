@@ -6,6 +6,7 @@ import Word from './components/Word'
 import ScreenReaderStatus from './components/ScreenReaderStatus.jsx'
 import Keyboard from './components/Keyboard'
 import NewGameBtn from './components/NewGameBtn'
+import Confetti from 'react-confetti'
 import { languages, getRandomWord } from "./utils.js"
 
 function App() {
@@ -41,12 +42,12 @@ function App() {
     useEffect(() => {
       if (isGameOver && newGameBtn.current !== null) {
         newGameBtn.current.focus()
-
       }
     }, [isGameOver])
 
   return (
     <main>
+      {isGameWon && <Confetti recycle={false} numberOfPieces={1000} />}
       <Header />
       <Status gameStatus={gameStatus} />
       <Languages wrongGuessCount={wrongGuessCount} />
