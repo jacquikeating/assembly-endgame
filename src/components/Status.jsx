@@ -36,7 +36,7 @@ export default function Status({ gameStatus }) {
     })
 
     return (
-        <section className={gameStatusClass}>
+        <section className={gameStatusClass} aria-live="polite" role="status">
             {messageContent()}
         </section>
     )

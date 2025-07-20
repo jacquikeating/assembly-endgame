@@ -4,7 +4,7 @@ export default function Keyboard({ guessedLetters, currentWord, guess, isGameOve
     const alphabet = Array.from("abcdefghijklmnopqrstuvwxyz")
 
     return (
-        <section className="keyboard">
+        <section className={isGameOver ? "keyboard disabled" : "keyboard"}>
             {alphabet.map((letter, index) => {
                 const clsxClass = clsx({
                     correct: guessedLetters.includes(letter) && currentWord.includes(letter),
@@ -16,10 +16,11 @@ export default function Keyboard({ guessedLetters, currentWord, guess, isGameOve
                         key={index}
                         className={clsxClass}
                         onClick={() => guess(letter)}
-                        disabled={isGameOver}
+                        disabled={isGameOver || guessedLetters.includes(letter)}
+                        aria-disabled={isGameOver || guessedLetters.includes(letter)}
                         >
                             {letter.toUpperCase()}
-                        </button>
+                    </button>
                 )
             })}
         </section>
