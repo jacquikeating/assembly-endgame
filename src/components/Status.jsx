@@ -3,7 +3,7 @@ import { languages, getFarewellText } from "../utils.js"
 
 export default function Status({ gameStatus }) {
     const [wrongGuessCount, isGameWon, isGameLost, isGameOver, isLastGuessIncorrect] = gameStatus
-
+    
     function messageContent() {
         if (isGameWon){
             return (
@@ -19,12 +19,20 @@ export default function Status({ gameStatus }) {
                     <p>You lose! Better start learning Assembly 😭</p>
                 </>
             )
+        } else if (!isGameOver && isLastGuessIncorrect) {
+            return (
+                <p className="farewell-msg">{getFarewellText(languages[wrongGuessCount - 1].name)}</p>
+            )
+
+        } else {
+            return null
         }
     }
 
     const gameStatusClass = clsx("status", {
         won: isGameWon,
-        lost: isGameLost
+        lost: isGameLost,
+        farewell: isLastGuessIncorrect
     })
 
     return (
