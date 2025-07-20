@@ -1,7 +1,8 @@
 import { clsx } from 'clsx';
 import { languages, getFarewellText } from "../utils.js"
 
-export default function Status({ isGameWon, isGameLost }) {
+export default function Status({ gameStatus }) {
+    const [wrongGuessCount, isGameWon, isGameLost, isGameOver, isLastGuessIncorrect] = gameStatus
 
     function messageContent() {
         if (isGameWon){

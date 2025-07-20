@@ -13,10 +13,13 @@ function App() {
     const [guessedLetters, setGuessedLetters] = useState([])
 
     // Derived values
-    let wrongGuessCount = guessedLetters.filter((letter) => !currentWord.includes(letter)).length
+    const wrongGuessCount = guessedLetters.filter((letter) => !currentWord.includes(letter)).length
     const isGameWon = currentWord.split("").every(letter => guessedLetters.includes(letter))
     const isGameLost = wrongGuessCount >= languages.length - 1 
     const isGameOver = isGameWon || isGameLost
+    const lastGuessedLetter = guessedLetters[guessedLetters.length - 1]
+    const isLastGuessIncorrect = lastGuessedLetter && !currentWord.includes(lastGuessedLetter)
+    const gameStatus = [wrongGuessCount, isGameWon, isGameLost, isGameOver, isLastGuessIncorrect]
 
     // Functions
     function guess(letter) {
@@ -28,7 +31,7 @@ function App() {
   return (
     <main>
       <Header />
-      <Status isGameWon={isGameWon} isGameLost={isGameLost} />
+      <Status gameStatus={gameStatus} />
       <Languages wrongGuessCount={wrongGuessCount} />
       <Word currentWord={currentWord} guessedLetters={guessedLetters} />
       <Keyboard guessedLetters={guessedLetters} currentWord={currentWord} guess={guess} />
