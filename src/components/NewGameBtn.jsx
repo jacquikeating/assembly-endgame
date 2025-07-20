@@ -1,5 +1,5 @@
-export default function NewGameBtn({ btnRef }) {
+export default function NewGameBtn({ btnRef, startNewGame }) {
     return (
-        <button id="new-game" ref={btnRef} onClick={() => console.log("new game started")}>New Game</button>
+        <button id="new-game" ref={btnRef} onClick={startNewGame}>New Game</button>
     )
 }

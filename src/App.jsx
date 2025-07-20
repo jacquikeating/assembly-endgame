@@ -6,11 +6,11 @@ import Word from './components/Word'
 import ScreenReaderStatus from './components/ScreenReaderStatus.jsx'
 import Keyboard from './components/Keyboard'
 import NewGameBtn from './components/NewGameBtn'
-import { languages } from "./utils.js"
+import { languages, getRandomWord } from "./utils.js"
 
 function App() {
     // State values
-    const [currentWord, setCurrentWord] = useState("react")
+    const [currentWord, setCurrentWord] = useState(() => getRandomWord())
     const [guessedLetters, setGuessedLetters] = useState([])
 
     // Derived values
@@ -33,6 +33,11 @@ function App() {
       }
     }
 
+    function startNewGame() {
+      setCurrentWord(getRandomWord())
+      setGuessedLetters([])
+    }
+
     useEffect(() => {
       if (isGameOver && newGameBtn.current !== null) {
         newGameBtn.current.focus()
@@ -48,7 +53,7 @@ function App() {
       <Word currentWord={currentWord} guessedLetters={guessedLetters} />
       <ScreenReaderStatus gameStatus={gameStatus} />
       <Keyboard guessedLetters={guessedLetters} currentWord={currentWord} guess={guess} isGameOver={isGameOver} />
-      { isGameOver && <NewGameBtn btnRef={newGameBtn} /> }
+      { isGameOver && <NewGameBtn btnRef={newGameBtn} startNewGame={startNewGame} /> }
     </main>
   )
 }
