@@ -1,8 +1,9 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Header from './components/Header'
 import Status from './components/Status'
 import Languages from './components/Languages'
 import Word from './components/Word'
+import ScreenReaderStatus from './components/ScreenReaderStatus.jsx'
 import Keyboard from './components/Keyboard'
 import NewGameBtn from './components/NewGameBtn'
 import { languages } from "./utils.js"
@@ -19,7 +20,11 @@ function App() {
     const isGameOver = isGameWon || isGameLost
     const lastGuessedLetter = guessedLetters[guessedLetters.length - 1]
     const isLastGuessIncorrect = lastGuessedLetter && !currentWord.includes(lastGuessedLetter)
-    const gameStatus = [wrongGuessCount, isGameWon, isGameLost, isGameOver, isLastGuessIncorrect]
+    const guessesLeft = (languages.length - 1) - wrongGuessCount
+    const gameStatus = [wrongGuessCount, isGameWon, isGameLost, isGameOver, isLastGuessIncorrect, guessesLeft, currentWord, guessedLetters, lastGuessedLetter]
+
+    // Static values
+    const newGameBtn = useRef(null)
 
     // Functions
     function guess(letter) {
@@ -28,14 +33,22 @@ function App() {
       }
     }
 
+    useEffect(() => {
+      if (isGameOver && newGameBtn.current !== null) {
+        newGameBtn.current.focus()
+
+      }
+    }, [isGameOver])
+
   return (
     <main>
       <Header />
       <Status gameStatus={gameStatus} />
       <Languages wrongGuessCount={wrongGuessCount} />
       <Word currentWord={currentWord} guessedLetters={guessedLetters} />
+      <ScreenReaderStatus gameStatus={gameStatus} />
       <Keyboard guessedLetters={guessedLetters} currentWord={currentWord} guess={guess} isGameOver={isGameOver} />
-      { isGameOver && <NewGameBtn /> }
+      { isGameOver && <NewGameBtn btnRef={newGameBtn} /> }
     </main>
   )
 }
