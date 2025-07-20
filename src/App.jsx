@@ -50,7 +50,7 @@ function App() {
       <Header />
       <Status gameStatus={gameStatus} />
       <Languages wrongGuessCount={wrongGuessCount} />
-      <Word currentWord={currentWord} guessedLetters={guessedLetters} />
+      <Word currentWord={currentWord} guessedLetters={guessedLetters} isGameLost={isGameLost} />
       <ScreenReaderStatus gameStatus={gameStatus} />
       <Keyboard guessedLetters={guessedLetters} currentWord={currentWord} guess={guess} isGameOver={isGameOver} />
       { isGameOver && <NewGameBtn btnRef={newGameBtn} startNewGame={startNewGame} /> }

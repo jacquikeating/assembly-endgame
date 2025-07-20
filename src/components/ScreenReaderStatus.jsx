@@ -1,11 +1,11 @@
 export default function ScreenReaderStatus({ gameStatus }) {
     const [wrongGuessCount, isGameWon, isGameLost, isGameOver, isLastGuessIncorrect, guessesLeft, currentWord, guessedLetters, lastGuessedLetter] = gameStatus
     
-    function announceCurrentWordOrNewGame() {
+    function readCurrentWord() {
         if (isGameWon) {
             return (`Correct! The word is ${currentWord}. Press Enter to start a new game.`)
         } else if (isGameLost) {
-            return (`Press Enter to start a new game.`)
+            return (`The word was ${currentWord}. Press Enter to start a new game.`)
         } else {
             return (`Current word:  
                 ${currentWord.split("").map(letter => 
@@ -28,7 +28,7 @@ export default function ScreenReaderStatus({ gameStatus }) {
 
             {!isGameOver && <p>You have {guessesLeft} attempts left.</p>}
 
-            <p>{announceCurrentWordOrNewGame()}</p>
+            <p>{readCurrentWord()}</p>
         </section>
     )
 }

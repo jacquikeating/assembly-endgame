@@ -135,6 +135,12 @@ header p {
     font-size: 1.125rem; /* 18px */
 }
 
+.missed-letter {
+    color: #EC5D49;
+}
+
+
+
 /* ScreenReaderStatus Component */
 
 .sr-only {
