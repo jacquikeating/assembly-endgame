@@ -1,9 +1,7 @@
 import { clsx } from 'clsx';
 
-export default function Keyboard({ guessedLetters, currentWord, guess}) {
+export default function Keyboard({ guessedLetters, currentWord, guess, isGameOver }) {
     const alphabet = Array.from("abcdefghijklmnopqrstuvwxyz")
-
-
 
     return (
         <section className="keyboard">
@@ -18,6 +16,7 @@ export default function Keyboard({ guessedLetters, currentWord, guess}) {
                         key={index}
                         className={clsxClass}
                         onClick={() => guess(letter)}
+                        disabled={isGameOver}
                         >
                             {letter.toUpperCase()}
                         </button>

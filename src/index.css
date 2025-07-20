@@ -169,10 +169,14 @@ header p {
     background: #EC5D49;
 }
 
-.keyboard > button:hover {
+.keyboard button:hover {
     opacity: 1.0;
 }
 
+.keyboard button:disabled {
+    opacity: 0.25;
+    cursor: not-allowed;
+}
 
 
 

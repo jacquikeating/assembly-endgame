@@ -34,7 +34,7 @@ function App() {
       <Status gameStatus={gameStatus} />
       <Languages wrongGuessCount={wrongGuessCount} />
       <Word currentWord={currentWord} guessedLetters={guessedLetters} />
-      <Keyboard guessedLetters={guessedLetters} currentWord={currentWord} guess={guess} />
+      <Keyboard guessedLetters={guessedLetters} currentWord={currentWord} guess={guess} isGameOver={isGameOver} />
       { isGameOver && <NewGameBtn /> }
     </main>
   )
