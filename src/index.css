@@ -156,7 +156,7 @@ header p {
     background: #FCBA29;
     font-weight: 600;
     color: #1E1E1E;
-    opacity: 0.5;
+    opacity: 0.75;
     cursor: pointer;
     transition: all 0.2s;
 }
@@ -174,7 +174,7 @@ header p {
 }
 
 .keyboard button:disabled {
-    opacity: 0.25;
+    opacity: 0.5;
     cursor: not-allowed;
 }
 
