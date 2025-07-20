@@ -5,7 +5,7 @@ import Languages from './components/Languages'
 import Word from './components/Word'
 import Keyboard from './components/Keyboard'
 import NewGameBtn from './components/NewGameBtn'
-import { languages } from "./languages.js"
+import { languages } from "./utils.js"
 
 function App() {
     // State values

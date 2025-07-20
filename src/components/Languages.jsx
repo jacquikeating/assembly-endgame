@@ -1,4 +1,4 @@
-import { languages } from "../languages.js"
+import { languages } from "../utils.js"
 
 export default function Languages({ wrongGuessCount }) {
     return (
