@@ -28,6 +28,18 @@ function App() {
     const newGameBtn = useRef(null)
 
     // Functions
+    useEffect(() => {
+      const onKeyDown = (e) => {
+        const isAlphabet = /^[a-zA-Z]$/.test(e.key);
+        const alreadyGuessed = guessedLetters.includes(e.key)
+        if (isAlphabet && !alreadyGuessed && !isGameOver) {
+            guess(e.key)
+        }
+      }
+      window.addEventListener('keydown', onKeyDown)
+      return () => window.removeEventListener('keydown', onKeyDown)
+    },[isGameOver])
+
     function guess(letter) {
       if (!guessedLetters.includes(letter)) {
         setGuessedLetters(prevGuesses => [...prevGuesses, letter])
@@ -44,6 +56,7 @@ function App() {
         newGameBtn.current.focus()
       }
     }, [isGameOver])
+
 
   return (
     <main>

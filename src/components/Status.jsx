@@ -32,7 +32,7 @@ export default function Status({ gameStatus }) {
     const gameStatusClass = clsx("status", {
         won: isGameWon,
         lost: isGameLost,
-        farewell: isLastGuessIncorrect
+        farewell: isLastGuessIncorrect && !isGameOver
     })
 
     return (
